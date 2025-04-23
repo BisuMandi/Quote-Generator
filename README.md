@@ -2,6 +2,10 @@
 
 A simple and responsive Quote Generator web application built with JavaScript. It displays random inspirational quotes along with their authors. Users can view a new quote, copy the quote to clipboard, or share it on Twitter. The app uses a quote API and also includes a fallback mechanism with a local array of quotes to ensure functionality even when offline.
 
+## 🔗 Live Demo
+
+👉 [Click here to try the Quote Generator](https://bisumandi.github.io/Quote-Generator/)
+
 ## Features
 
 - **Random Quote Display**: Shows a quote and its author.
