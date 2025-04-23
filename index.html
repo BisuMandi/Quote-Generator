@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quote Generator</title>
+    <link rel="icon" href="images/favicon-start-quotation.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="queries.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- <script src="script.js"></script> -->
+</head>
+
+<body>
+    <div class="quote-container" id="quote-container">
+        <div id="main-quote">
+            <div class="quote-text" id="quote-text">
+                <!-- quotation icon -->
+                <i class="fas fa-quote-left"></i>
+                <span id="quote"></span>
+            </div>
+            <div class="quote-author" id="quote-author">
+                <span id="author"></span>
+            </div>
+        </div>
+        <!-- copy icon -->
+        <i id="copy-icon" class="fa-regular fa-copy" title="copy quote"></i>
+        <!-- loader -->
+        <div class="loader" id="loader"></div>
+        <div class="button-container">
+            <button class="twitter-btn" id="twitter" title="Tweet this!">
+                <!-- twitter icon -->
+                <i class="fab fa-twitter"></i>
+            </button>
+            <!-- Generate new quote button -->
+            <button id="new-quote">New Quote</button>
+        </div>
+    </div>
+    <script src="quotes.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
