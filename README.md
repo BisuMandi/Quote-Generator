@@ -13,6 +13,7 @@ A simple and responsive Quote Generator web application built with JavaScript. I
 - **Tweet Quote**: Share the quote on Twitter with one click.
 - **Copy Quote**: Copy the quote text to the clipboard.
 - **Offline Support**: If the quote API fails or the user is offline, a local array of quote objects is used.
+- **Dark Mode Theme**: Toggle between light and dark themes. The selected theme is saved and automatically restored when the page is refreshed.
 
 ## Technologies Used
 
