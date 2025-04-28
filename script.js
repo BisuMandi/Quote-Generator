@@ -4,6 +4,7 @@ const quoteAuthor = document.getElementById('author');
 const newQuoteBtn = document.getElementById('new-quote');
 const twitterBtn = document.getElementById('twitter');
 const copyIcon = document.getElementById('copy-icon');
+const modeBtn = document.getElementById('mode');
 
 const mainQuote = document.getElementById('main-quote');
 const loader = document.getElementById('loader');
@@ -75,6 +76,23 @@ async function setQuoteFromAPI() {
   }
 }
 
+// Restore the previous mode
+if (localStorage.getItem('theme') === 'dark') {
+  document.body.classList.add('dark');
+}
+
+// Mode toggle button
+const checkbox = document.getElementById("checkbox")
+checkbox.addEventListener("change", () => {
+  document.body.classList.toggle("dark");
+  // Remember/ save the current mode
+  if (document.body.classList.contains('dark')) {
+    localStorage.setItem('theme', 'dark');
+  } else {
+    localStorage.setItem('theme', 'light');
+  }
+});
+
 // Event Listeners
 // Set Random Quote once from local array (for fast experience) on page loading
 window.addEventListener('load', setQuote);
@@ -98,17 +116,17 @@ twitterBtn.addEventListener('click', () => {
 // Copy the current quote and author in user's clipboard
 copyIcon.addEventListener('click', () => {
   navigator.clipboard.writeText(`${quoteText.textContent} ${quoteAuthor.textContent}`)
-  .then(() => {
-    // add 'clicked' class to make icon black
-    copyIcon.classList.remove('fa-regular');
-    copyIcon.classList.add('fa-solid', 'clicked');
-    // remove the black fill after 1 second
-    setTimeout(() => {
-      copyIcon.classList.remove('fa-solid', 'clicked');
-      copyIcon.classList.add('fa-regular');
-    }, 1000);
-  })
-  .catch(() => {
-    console.log('Failed to copy', err);
-  });
+    .then(() => {
+      // add 'clicked' class to make icon black
+      copyIcon.classList.remove('fa-regular');
+      copyIcon.classList.add('fa-solid', 'clicked');
+      // remove the black fill after 1 second
+      setTimeout(() => {
+        copyIcon.classList.remove('fa-solid', 'clicked');
+        copyIcon.classList.add('fa-regular');
+      }, 1000);
+    })
+    .catch(() => {
+      console.log('Failed to copy', err);
+    });
 });
