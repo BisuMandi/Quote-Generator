@@ -76,13 +76,14 @@ async function setQuoteFromAPI() {
   }
 }
 
+const checkbox = document.getElementById("checkbox")
 // Restore the previous mode
 if (localStorage.getItem('theme') === 'dark') {
   document.body.classList.add('dark');
+  checkbox.checked = true;
 }
 
 // Mode toggle button
-const checkbox = document.getElementById("checkbox")
 checkbox.addEventListener("change", () => {
   document.body.classList.toggle("dark");
   // Remember/ save the current mode
